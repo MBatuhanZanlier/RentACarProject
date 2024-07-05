@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+@await Component.InvokeAsync("_UIRentaCarHeadComponentPartial")
+<body> 
+    @await Component.InvokeAsync("_UIRentaCarNavbarComponentPartial")
+
+    <div class="site-wrap" id="home-section">
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+        @RenderBody()
+
+        @await Component.InvokeAsync("_UIRentaCarFooterComponentPartial")
+    </div>
+    @await Component.InvokeAsync("_UIRentaCarScriptsComponentPartial")
+</body>
+
+</html>
+

@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UIRentaCarLayout.cshtml";
+}
+
+@await Component.InvokeAsync("_UIRenteCarSearchComponentPartial")
+@await Component.InvokeAsync("_UIRentaCarHowİtWorkComponentPartial")
+@await Component.InvokeAsync("_UIRentaCarPromoComponentPartial")
+@await Component.InvokeAsync("_UIRentaCarCarListComponentPartial")
+@await Component.InvokeAsync("_UIRentaCarFeatureComponentPartial")
+@await Component.InvokeAsync("_UIRentaCarTestimonialComponentPartial")

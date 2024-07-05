@@ -1,0 +1,61 @@
+﻿@model List<RentACarProject.Mediator.Results.SearchCarQueryResult>
+@{
+    ViewData["Title"] = "SearchCarList";
+    Layout = "~/Views/Shared/UIRentaCarLayout.cshtml";
+}
+
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <h2 class="section-heading"><strong></strong></h2>
+                <p class="mb-5"></p>
+            </div>
+        </div>
+
+
+        <div class="row"> 
+           
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4 mb-4">
+
+                    <div class="listing d-block  align-items-stretch">
+                        <div class="listing-img h-100 mr-4">
+                            <img src="@item.ImageUrl" alt="Image" class="img-fluid">
+                        </div>
+                        <div class="listing-contents h-100">
+                            <h3>@item.CarBrand @item.CarModel</h3>
+
+                            <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                                <div class="listing-feature pr-4">
+                                    <span class="caption">Kasa Tipi:</span>
+                                    <span class="number">@item.CarType</span>
+                                </div>
+                                <div class="listing-feature pr-4">
+                                    <span class="caption">Yakıt Türü:</span>
+                                    <span class="number">@item.CarFuelType</span>
+                                </div>
+                                <div class="listing-feature pr-4">
+                                    <span class="caption">Minumum Yaş:</span>
+                                    <span class="number">@item.CarRenterPersonMinAge</span>
+                                </div>
+                            </div>
+                            <div>
+
+                                <p> <a href="#" class="btn btn-primary btn-sm">Detaylar</a>  <a href="#" class="btn btn-primary btn-sm">Aracı Kirala</a> </p>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            }
+        </div>
+         
+        </div>
+
+    </div>
+</div>
+

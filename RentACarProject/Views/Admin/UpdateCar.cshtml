@@ -1,0 +1,52 @@
+﻿@model RentACarProject.CQRS.Results.GetForCarByIdQueryResult
+@{
+    ViewData["Title"] = "UpdateCar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<form method="post">
+    <div class="container">
+        <br /> 
+        @Html.HiddenFor(x=>x.ForRentCarID)
+        <div class="alert alert-success"><h2>Araç Güncelleme Sayfası</h2></div>
+        <label>Araç Markası</label>
+        <input type="text" asp-for="CarBrand" class="form-control" />
+        <br />
+        <label>Araç Modeli</label>
+        <input type="text" asp-for="CarModel" class="form-control" />
+        <br />
+        <label>Araç Kmsi</label>
+        <input type="text" asp-for="CarKM" class="form-control" />
+        <br />
+        <label>Araç Gücü</label>
+        <input type="text" asp-for="CarEnginePower" class="form-control" />
+        <br />
+        <label>Kasa Tipi</label>
+        <input type="text" asp-for="CarType" class="form-control" />
+        <br />
+        <label>Vites Tipi</label>
+        <input type="text" asp-for="CarGearType" class="form-control" />
+        <br />
+        <label>Araç Kişi sayısı</label>
+        <input type="text" asp-for="CarTotalPerson" class="form-control" />
+        <br />
+        <label>Yakıt Türü</label>
+        <input type="text" asp-for="CarFuelType" class="form-control" />
+        <br />
+        <label>Araç Rengi</label>
+        <input type="text" asp-for="CarColor" class="form-control" />
+        <br />
+        <label>Minumun Sürücü Yaşı</label>
+        <input type="text" asp-for="CarRenterPersonMinAge" class="form-control" />
+        <br />
+        <label>Araç Resmi</label>
+        <input type="text" asp-for="ImageUrl" class="form-control" />
+        <br />
+        <label>Günlük Fiyatı</label>
+        <input type="text" asp-for="CarDayPrice" class="form-control" />
+        <br />
+        <button class="btn btn-warning">Aracı Ekle</button>
+    </div>
+</form>
+

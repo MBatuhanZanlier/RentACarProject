@@ -1,0 +1,43 @@
+﻿@model SearchCarViewModel
+<div class="hero" style="background-image: url('/carrentals-master/images/hero_1_a.jpg');">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-10">
+
+                <div class="row mb-5">
+                    <div class="col-lg-7 intro">
+                        <h1><strong>Car Rental</strong> Gezmek hiç bu kadar kolay olmamıştı..</h1>
+                    </div>
+                </div>
+                <form method="post" asp-action="SearchCarList" asp-controller="UIRentaCar" class="trip-form">
+                    <div class="row align-items-center">
+                        <div class="mb-3 mb-md-0 col-md-3">
+                            @Html.DropDownListFor(x => x.ReceivingLocationID, (List<SelectListItem>)ViewBag.receivingLocation, "Alış Yeri", new { @class = "custom-select form-control" })
+                        </div>
+                        <div class="mb-3 mb-md-0 col-md-3">
+                            @Html.DropDownListFor(x => x.DestinationLocationID, (List<SelectListItem>)ViewBag.deliveryLocation, "Teslim Yeri", new { @class = "custom-select form-control" })
+                        </div>
+                        <div class="mb-3 mb-md-0 col-md-3">
+                            <div class="form-control-wrap">
+                                <input type="text" id="cf-3" placeholder="Alış Tarihi" asp-for="ReceivingDate" class="form-control datepicker px-3">
+                                <span class="icon icon-date_range"></span>
+
+                            </div>
+                        </div>
+                        <div class="mb-3 mb-md-0 col-md-3">
+                            <div class="form-control-wrap">
+                                <input type="text" id="cf-4" placeholder="Teslim Tarihi" asp-for="DeliveryDate" class="form-control datepicker px-3">
+                                <span class="icon icon-date_range"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3 mb-md-0 col-md-3">
+                            <br />
+                            <button class="btn btn-primary btn-block py-3">Araç Ara</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

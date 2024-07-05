@@ -1,0 +1,85 @@
+﻿@model List<RentACarProject.CQRS.Results.GetCarQueryResult>
+@{
+    ViewData["Title"] = "CarList";
+    Layout = "~/Views/Shared/UIRentaCarLayout.cshtml";
+}
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <h2 class="section-heading"><strong></strong></h2>
+                <p class="mb-5"></p>
+            </div>
+        </div>
+        <h1>Kiralık Araçlar Listesi</h1>
+   <br />
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4 mb-4">
+
+                    <div class="listing d-block  align-items-stretch">
+                        <div class="listing-img h-100 mr-4">
+                            <img src="@item.ImageUrl" alt="Image" class="img-fluid">
+                        </div>
+                        <div class="listing-contents h-100">
+                            <h3>@item.CarBrand @item.CarModel</h3>
+                            <div class="rent-price">
+                                <strong>@item.CarDayPrice</strong><span class="mx-1">/</span>Günlük
+                            </div>
+                            <div class="d-block d-md-flex mb-3 border-bottom pb-3">
+                                <div class="listing-feature pr-4">
+                                    <span class="caption">Kasa Tipi:</span>
+                                    <span class="number">@item.CarType</span>
+                                </div>
+                                <div class="listing-feature pr-4">
+                                    <span class="caption">Yakıt Türü:</span>
+                                    <span class="number">Benzin</span>
+                                </div>
+                                <div class="listing-feature pr-4">
+                                    <span class="caption">Motor Gücü:</span>
+                                    <span class="number">@item.CarEnginePower</span>
+                                </div>
+                            </div>
+                            <div>
+
+                                <p> <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal1-@item.ForRentCarID">Detaylar</a>  <a href="#" class="btn btn-primary btn-sm">Aracı Kirala</a> </p>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal" id="Modal1-@item.ForRentCarID" tabindex="-1">
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold"><b>@item.CarBrand @item.CarModel</b></h5><br />
+                            </div>
+                            <div class="modal-body">
+
+                                <img src="@item.ImageUrl" style="height:370px;" />
+                                <div class="card">
+                                    <div class="card-header"><b>Araç Hakkında</b></div>
+                                    <div class="card-body p-3">
+                                        <span class="caption"><b>Araç Km:</b> @item.CarKM</span><br />
+                                        <span class="caption"><b>Vites Tipi:</b> @item.CarGearType</span><br />
+                                        <span class="caption"><b>Yakıt Tipi:</b> Benzin</span><br />
+                                        <span class="caption"><b>Motor Gücü:</b> @item.CarEnginePower</span><br />
+                                        <span class="caption"><b>Kasa Tipi:</b> @item.CarType</span><br />
+                                        <span class="caption"><b>Günlük Fiyat:</b> @item.CarDayPrice</span><br />
+                                        <span class="caption"><b>Minumum Yaş:</b> @item.CarRenterPersonMinAge</span><br />
+                                        <span class="caption"><b>Kapasite:</b> @item.CarTotalPerson</span><br />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
